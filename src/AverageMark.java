@@ -1,5 +1,5 @@
 /**
- * Created by liam on 11/07/17.
+ * Created by liam on 11/07/17
  */
 import java.io.IOException;
 
@@ -15,6 +15,9 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 public class AverageMark {
 
+    /**
+     * Mapper class for extracting student IDs and marks
+     */
     public static class AverageMarkMapper
             extends Mapper<Object, Text, Text, DoubleWritable>{
 
@@ -34,6 +37,9 @@ public class AverageMark {
         }
     }
 
+    /**
+     * Reducer class for computing average mark of students
+     */
     public static class AverageMarkReducer
             extends Reducer<Text, DoubleWritable, Text, DoubleWritable> {
 
